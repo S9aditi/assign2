@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Charts</title>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/gradient-abstract-wireframe-background_23-2149009903.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            justify-content: center;
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+
+        .dashboard-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .search-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        #filterInput {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .column {
+            flex: 1 1 30%;
+            max-width: 30%;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 5px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chart-wrapper {
+         
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+        }
+
+        .chart-wrapper canvas {
+          justify-content: center;
+          align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .chart-title {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="dashboard-title">SONGS DASHBOARD</h1>
+        <h2 class="search-title">Search Song</h2>
+        <input type="text" id="filterInput" placeholder="Filter tracks...">
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <h2 class="chart-title">Bar Chart</h2>
+                <div class="chart-wrapper">
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <h3 class="chart-title">Line Chart</h3>
+                <div class="chart-wrapper">
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+          <div class="card">
+              <h3 class="chart-title">Pie Chart</h3>
+              <div class="chart-wrapper">
+                  <canvas id="pieChart"></canvas>
+              </div>
+          </div>
+      </div>
+        <div class="column">
+          <div class="card">
+              <h3 class="chart-title">Scatter Plot</h3>
+              <div class="chart-wrapper">
+                  <canvas id="scatterPlot"></canvas>
+              </div>
+          </div>
+      </div>
+      <div class="column">
+        <div class="card">
+            <h3 class="chart-title">Bar Chart</h3>
+            <div class="chart-wrapper">
+                <canvas id="artistPopularityChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+      <div class="card">
+          <h3 class="chart-title">Line Chart</h3>
+          <div class="chart-wrapper">
+              <canvas id="lineChart"></canvas>
+          </div>
+      </div>
+  </div>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
